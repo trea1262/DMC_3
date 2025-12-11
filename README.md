@@ -58,6 +58,7 @@ python mainneg.py --dataset_split_type direct --test_only_model_path <model_best
 
 ## 🏆 Fine-tuned Checkpoints
 We will provide our fine-tuned model checkpoints as soon as possible.
+https://drive.google.com/drive/folders/1fUoKMetg2ehEFbuwZDem4HQRuw6bZxcb?usp=sharing
 
 ## 🎓 Citation
 If our work is helpful to you, please cite our paper.
