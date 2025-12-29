@@ -59,6 +59,21 @@ python mainneg.py --dataset_split_type direct --test_only_model_path <model_best
 ## 🏆 Fine-tuned Checkpoints
 We will provide our fine-tuned model checkpoints as soon as possible.
 https://drive.google.com/drive/folders/1fUoKMetg2ehEFbuwZDem4HQRuw6bZxcb?usp=sharing
+Data structure as below:
+
+```
+    root
+    ├── direct
+    │   └──  formatted_train_qas_encode4.json
+    │   └──  formatted_val_qas_encode4.json
+    │   └──  formatted_test_qas_encode4.json
+    ├── indirect
+    │   └──  formatted_train_qas_encode4.json
+    │   └──  formatted_val_qas_encode4.json
+    │   └──  formatted_test_qas_encode4.json
+    ├── jx_vit_base_p16_224-80ecf9dd.pth
+    ├── clip_openai_timesformer_large.narrator_rephraser.ep_0003.md5sum_c89337.pth
+```
 
 ## 🎓 Citation
 If our work is helpful to you, please cite our paper.
