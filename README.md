@@ -10,6 +10,12 @@ pip install torch-1.12.1+cu113-cp39-cp39-linux_x86_64.whl
 pip install torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install -r requirements.txt
 ```
+Our experiments were conducted on NVIDIA V100 GPUs. Note that when reproducing the results on newer architectures such as A100 or H100, one should be aware that these GPUs enable TF32 (Tensor Float 32) precision by default for certain CUDA operations, which is not supported on V100. This can lead to numerical discrepancies and slightly lower performance (e.g., up to ～3% drop in some metrics). To ensure consistent results across hardware, we recommend disabling TF32 mode on A100/H100 by setting:
+```
+torch.backends.cuda.matmul.allow_tf32 = False
+torch.backends.cudnn.allow_tf32 = False
+```
+With TF32 disabled, our reproduced results on A100 align closely with those reported in the paper.
 
 ### 2. Data Download
 You can get the dataset by following the data processing steps provided in the [EgoTaskQA](https://github.com/Buzz-Beater/EgoTaskQA/blob/main/baselines/README.md) work. Also, you can download the processed data directly by following the [EgoVideoQA](https://github.com/Hyu-Zhang/EgoVideoQA/blob/main/README.md) work.
